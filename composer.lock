@@ -4,8 +4,86 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ce964e374476bd1699307cb519a92507",
+    "content-hash": "050bffdcf07a3b5c699698f82c72b484",
     "packages": [
+        {
+            "name": "aliyun/openapi-php-sdk",
+            "version": "v0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wenqinruan/aliyun-openapi-php-sdk.git",
+                "reference": "7216921f4da46cd15e0c321ad106e835980100a8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wenqinruan/aliyun-openapi-php-sdk/zipball/7216921f4da46cd15e0c321ad106e835980100a8",
+                "reference": "7216921f4da46cd15e0c321ad106e835980100a8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Aliyun\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ruanwenqin",
+                    "email": "452253895@qq.com"
+                }
+            ],
+            "homepage": "https://github.com/wenqinruan/aliyun-openapi-php-sdk",
+            "abandoned": true,
+            "time": "2015-10-09T07:50:21+00:00"
+        },
+        {
+            "name": "aliyuncs/oss-sdk-php",
+            "version": "v2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aliyun/aliyun-oss-php-sdk.git",
+                "reference": "e69f57916678458642ac9d2fd341ae78a56996c8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aliyun/aliyun-oss-php-sdk/zipball/e69f57916678458642ac9d2fd341ae78a56996c8",
+                "reference": "e69f57916678458642ac9d2fd341ae78a56996c8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OSS\\": "src/OSS"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aliyuncs",
+                    "homepage": "http://www.aliyun.com"
+                }
+            ],
+            "description": "Aliyun OSS SDK for PHP",
+            "homepage": "http://www.aliyun.com/product/oss/",
+            "time": "2018-01-08T06:59:35+00:00"
+        },
         {
             "name": "caouecs/laravel-lang",
             "version": "3.0.59",
@@ -822,6 +900,55 @@
                 "url"
             ],
             "time": "2018-12-04T20:46:45+00:00"
+        },
+        {
+            "name": "hpyer/aliyun-sts",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hpyer/aliyun-sts.git",
+                "reference": "24982cf59a61bf88c750cac09e11afe7b70fe839"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hpyer/aliyun-sts/zipball/24982cf59a61bf88c750cac09e11afe7b70fe839",
+                "reference": "24982cf59a61bf88c750cac09e11afe7b70fe839",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hpyer\\Aliyun\\Sts\\": "src",
+                    "Sts\\": "src/sdk"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hpyer",
+                    "email": "me@hpyer.cn",
+                    "homepage": "http://hpyer.cn"
+                }
+            ],
+            "description": "Aliyun-STS SDK",
+            "homepage": "http://github.com/hpyer/aliyun-sts",
+            "keywords": [
+                "aliyun",
+                "oss",
+                "sts"
+            ],
+            "time": "2016-05-04T11:47:22+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -5889,7 +6016,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "hpyer/aliyun-sts": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
