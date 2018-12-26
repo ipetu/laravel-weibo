@@ -100,9 +100,6 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
       <path value="$PROJECT_DIR$/vendor/caouecs/laravel-lang" />
       <path value="$PROJECT_DIR$/vendor/overtrue/laravel-lang" />
-      <path value="$PROJECT_DIR$/vendor/aliyuncs/oss-sdk-php" />
-      <path value="$PROJECT_DIR$/vendor/aliyun/openapi-php-sdk" />
-      <path value="$PROJECT_DIR$/vendor/hpyer/aliyun-sts" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
