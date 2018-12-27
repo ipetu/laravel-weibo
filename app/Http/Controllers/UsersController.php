@@ -32,7 +32,8 @@ class UsersController extends Controller
 //        app()->setLocale('zh-HK');
 //        echo trans('hb.user_regiest_success');
         $this->authorize('update',$user);
-        return view('users.show',compact('user'));
+        $statuses = $user->status()->orderBy('created_at','desc');
+        return view('users.show',compact('user','statuses'));
     }
 
     public function store(Request $request){

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * App\Models\User
@@ -30,14 +31,30 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property int $is_admin
+ * @property string|null $activation_token
+ * @property int $activated
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \App\Models\Article $article
+ * @method static bool|null forceDelete()
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User onlyTrashed()
+ * @method static bool|null restore()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereActivated($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereActivationToken($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereIsAdmin($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User withoutTrashed()
  */
 class User extends Authenticatable
 {
     protected $table = 'users';
 
+    use SoftDeletes;
 
     use Notifiable;
 
+    protected $dates = ['deleted_at'];
     /**
      * The attributes that are mass assignable.
      *
@@ -67,5 +84,13 @@ class User extends Authenticatable
         static::creating(function($user){
             $user->activation_token = str_random(30);
         });
+    }
+
+    public function article(){
+        return $this->hasOne('\App\Models\Article');
+    }
+
+    public function status(){
+        return $this->hasMany(Status::class);
     }
 }
